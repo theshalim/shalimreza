@@ -3,1314 +3,1199 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Shalim Reza - IT Professional and Business Analyst specializing in ERP implementations and project management.">
-  <meta name="keywords" content="Shalim Reza, IT Professional, Business Analyst, ERP Implementation, Project Management, HR Payroll Systems">
-  <title>Shalim Reza - IT Professional & Business Analyst</title>
+  <meta name="description" content="Shalim Reza - ERP Implementation Expert & Business Analyst">
+  <title>Shalim Reza — ERP Expert & Business Analyst</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --navy: #0a1628;
+      --navy-mid: #112240;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --cream: #f5f0e8;
+      --white: #ffffff;
+      --gray: #8892a4;
+      --text: #ccd6f6;
+      --accent: #64ffda;
+      --card-bg: rgba(17, 34, 64, 0.8);
     }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      color: #333;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--navy);
+      color: var(--text);
       overflow-x: hidden;
+      cursor: none;
     }
 
-    /* Navigation */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      padding: 1rem 0;
-      transition: all 0.3s ease;
-    }
-
-    .navbar.scrolled {
-      background: rgba(255, 255, 255, 1);
-      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2rem;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #0073b1;
-    }
-
-    .nav-menu {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-
-    .nav-link {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s ease;
-      position: relative;
-    }
-
-    .nav-link:hover {
-      color: #0073b1;
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -5px;
-      left: 0;
-      background: #0073b1;
-      transition: width 0.3s ease;
-    }
-
-    .nav-link:hover::after {
-      width: 100%;
-    }
-
-    .hamburger {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: #0073b1;
-      cursor: pointer;
-    }
-
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(0,115,177,0.7), rgba(102,126,234,0.6)),
-                  url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
-      opacity: 0.1;
-    }
-
-    .hero-content {
-      max-width: 800px;
-      padding: 0 2rem;
-      z-index: 2;
-      position: relative;
-      animation: fadeInUp 1.5s ease;
-    }
-
-    .hero h1 {
-      font-size: 3.8rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-      animation: slideInDown 1s ease 0.5s both;
-    }
-
-    .hero p {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-      animation: slideInUp 1s ease 0.8s both;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      animation: slideInUp 1s ease 1.2s both;
-    }
-
-    .btn {
-      padding: 12px 30px;
-      border: none;
-      border-radius: 50px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .btn-primary {
-      background: white;
-      color: #0073b1;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-    }
-
-    .btn-secondary:hover {
-      background: white;
-      color: #0073b1;
-    }
-
-    /* Sections */
-    .section {
-      padding: 80px 0;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 3rem;
-      color: #0073b1;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, #0073b1, #00aaff);
-      border-radius: 2px;
-    }
-
-    /* Stats Counter Section */
-    .stats-section {
-      background: linear-gradient(135deg, #f8f9ff, #e8f0ff);
-      padding: 60px 0;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      text-align: center;
-    }
-
-    .stat-item {
-      background: white;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .stat-item:hover {
-      transform: translateY(-10px);
-    }
-
-    .stat-number {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #0073b1;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      font-size: 1rem;
-      color: #666;
-    }
-
-    /* Popup Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      align-items: center;
-      justify-content: center;
-      overflow: auto;
-    }
-
-    .modal-content {
-      background: white;
-      margin: 15% auto;
-      padding: 2rem;
-      border-radius: 20px;
-      max-width: 500px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-      max-height: 80vh;
-      overflow-y: auto;
-    }
-
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .close:hover {
-      color: #000;
-    }
-
-    /* About Section */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .about-image {
-      text-align: center;
-    }
-
-    .about-image img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    }
-
-    .about-content h3 {
-      color: #0073b1;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-
-    /* Experience & Projects */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .card {
-      background: white;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-      border-top: 4px solid #0073b1;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #0073b1, #00aaff);
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    }
-
-    .card-icon {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, #0073b1, #00aaff);
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .card h3 {
-      color: #0073b1;
-      margin-bottom: 1rem;
-    }
-
-    /* Services Section */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .service-item {
-      background: white;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .service-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    }
-
-    .service-icon {
-      font-size: 3rem;
-      color: #0073b1;
-      margin-bottom: 1rem;
-    }
-
-    /* Skills */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .skill-item {
-      background: linear-gradient(135deg, #f8f9ff, #e8f0ff);
-      padding: 1.5rem;
-      border-radius: 15px;
-      text-align: center;
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-    }
-
-    .skill-item:hover {
-      border-color: #0073b1;
-      transform: translateY(-5px);
-    }
-
-    /* Testimonials Section */
-    .testimonials-section {
-      background: #f8f9fa;
-    }
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-    }
-
-    .testimonial-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      text-align: center;
-      position: relative;
-    }
-
-    .testimonial-img {
-      width: 80px;
-      height: 80px;
+    /* Custom Cursor */
+    .cursor {
+      width: 12px; height: 12px;
+      background: var(--gold);
       border-radius: 50%;
-      margin: 0 auto 1rem;
-      border: 3px solid #0073b1;
+      position: fixed;
+      pointer-events: none;
+      z-index: 99999;
+      transition: transform 0.1s;
+      mix-blend-mode: difference;
+    }
+    .cursor-ring {
+      width: 36px; height: 36px;
+      border: 1.5px solid var(--gold);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 99998;
+      transition: all 0.15s ease;
+      opacity: 0.6;
     }
 
-    .stars {
-      color: #ffc107;
-      margin-bottom: 1rem;
+    /* Noise overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
     }
 
-    /* FAQ Section */
-    .faq-section {
-      background: linear-gradient(135deg, #f8f9ff, #e8f0ff);
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; width: 100%;
+      z-index: 1000;
+      padding: 1.2rem 0;
+      transition: all 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(10,22,40,0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      padding: 0.8rem 0;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 2.5rem;
+    }
+    .logo-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 900;
+      color: var(--gold);
+      letter-spacing: -0.02em;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .logo-mark span { color: var(--white); }
+    .nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
+    .nav-links a {
+      color: var(--gray); text-decoration: none;
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 1px; background: var(--gold); transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      padding: 0.5rem 1.4rem;
+      border: 1px solid var(--gold); border-radius: 4px;
+      color: var(--gold) !important;
+      transition: all 0.3s !important;
+    }
+    .nav-cta:hover { background: rgba(201,168,76,0.1) !important; }
+    .hamburger { display: none; background: none; border: none; color: var(--gold); font-size: 1.4rem; cursor: pointer; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 8rem 0 4rem;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 80% at 70% 50%, rgba(201,168,76,0.06) 0%, transparent 60%),
+                  radial-gradient(ellipse 60% 60% at 20% 80%, rgba(100,255,218,0.04) 0%, transparent 50%);
+    }
+    .hero-grid-lines {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 2.5rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+      position: relative; z-index: 2;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);
+      padding: 0.35rem 1rem; border-radius: 100px;
+      font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s ease 0.2s both;
+    }
+    .hero-tag::before { content: '●'; font-size: 0.5rem; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      font-weight: 900; line-height: 1.05;
+      color: var(--white); margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s ease 0.4s both;
+    }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--gray); line-height: 1.8;
+      max-width: 500px; margin-bottom: 2.5rem;
+      animation: fadeUp 0.8s ease 0.6s both;
+    }
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      animation: fadeUp 0.8s ease 0.8s both;
+    }
+    .btn-gold {
+      padding: 0.9rem 2rem; background: var(--gold); color: var(--navy);
+      border: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem;
+      text-decoration: none; transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.5rem;
+      cursor: none;
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 15px 40px rgba(201,168,76,0.3); }
+    .btn-outline {
+      padding: 0.9rem 2rem; background: transparent; color: var(--text);
+      border: 1px solid rgba(204,214,246,0.3); border-radius: 6px;
+      font-weight: 500; font-size: 0.9rem; text-decoration: none;
+      transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.5rem;
+      cursor: none;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* Hero visual */
+    .hero-visual {
+      position: relative; animation: fadeUp 0.8s ease 0.5s both;
+    }
+    .hero-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 20px; padding: 2rem;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+      position: relative; overflow: hidden;
+    }
+    .hero-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--accent), var(--gold));
+    }
+    .profile-ring {
+      width: 120px; height: 120px; border-radius: 50%;
+      border: 3px solid var(--gold);
+      background: linear-gradient(135deg, var(--navy-mid), var(--navy));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900;
+      color: var(--gold); margin: 0 auto 1.5rem;
+      box-shadow: 0 0 0 8px rgba(201,168,76,0.1), 0 20px 40px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .profile-ring::after {
+      content: '✓'; position: absolute; bottom: 4px; right: 4px;
+      width: 28px; height: 28px; background: var(--gold); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; color: var(--navy); font-weight: 700;
+    }
+    .hero-card h3 { text-align: center; color: var(--white); font-size: 1.2rem; margin-bottom: 0.3rem; }
+    .hero-card p { text-align: center; color: var(--gray); font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .mini-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+      border-top: 1px solid rgba(201,168,76,0.15); padding-top: 1.5rem;
+    }
+    .mini-stat { text-align: center; }
+    .mini-stat-num { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--gold); display: block; }
+    .mini-stat-label { font-size: 0.7rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.08em; }
+    .floating-badge {
+      position: absolute; background: var(--navy-mid); border: 1px solid rgba(100,255,218,0.3);
+      border-radius: 12px; padding: 0.6rem 1rem;
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.78rem; color: var(--accent);
+      animation: float 3s ease-in-out infinite;
+    }
+    .floating-badge.b1 { top: -20px; right: -20px; }
+    .floating-badge.b2 { bottom: -20px; left: -20px; animation-delay: 1.5s; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+    /* ── MARQUEE ── */
+    .marquee-section {
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      padding: 1rem 0; overflow: hidden;
+      background: rgba(17,34,64,0.5);
+    }
+    .marquee-track {
+      display: flex; animation: marquee 20s linear infinite; gap: 3rem;
+      white-space: nowrap;
+    }
+    .marquee-item {
+      display: flex; align-items: center; gap: 0.7rem;
+      color: var(--gray); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+      flex-shrink: 0;
+    }
+    .marquee-item i { color: var(--gold); }
+    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+    /* ── STATS ── */
+    .stats-section { padding: 6rem 0; }
+    .stats-inner { max-width: 1200px; margin: 0 auto; padding: 0 2.5rem; }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+      background: rgba(201,168,76,0.1); border-radius: 20px; overflow: hidden;
+    }
+    .stat-box {
+      background: var(--navy-mid); padding: 3rem 2rem;
+      text-align: center; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden;
+    }
+    .stat-box::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      transform: translateX(-100%); transition: transform 0.5s;
+    }
+    .stat-box:hover::before { transform: translateX(0); }
+    .stat-box:hover { background: rgba(17,34,64,0.95); }
+    .stat-box:hover .stat-num { color: var(--gold-light); }
+    .stat-num {
+      font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 900;
+      color: var(--gold); line-height: 1; margin-bottom: 0.5rem; display: block;
+      transition: color 0.3s;
+    }
+    .stat-lbl { color: var(--gray); font-size: 0.85rem; letter-spacing: 0.05em; }
+    .stat-icon { font-size: 1.5rem; color: rgba(201,168,76,0.3); margin-bottom: 1rem; }
+
+    /* ── SECTION COMMONS ── */
+    .section { padding: 6rem 0; }
+    .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 2.5rem; }
+    .section-label {
+      display: flex; align-items: center; gap: 1rem;
+      font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem;
+    }
+    .section-label::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+      color: var(--white); margin-bottom: 1rem;
+    }
+    .section-sub { color: var(--gray); max-width: 560px; line-height: 1.8; margin-bottom: 3.5rem; }
+
+    /* ── ABOUT ── */
+    .about-section { background: rgba(17,34,64,0.3); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .about-img-wrapper { position: relative; }
+    .about-img-frame {
+      aspect-ratio: 4/5; border-radius: 16px; overflow: hidden;
+      background: linear-gradient(135deg, var(--navy-mid), var(--navy));
+      border: 1px solid rgba(201,168,76,0.2);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .about-img-frame img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: grayscale(20%) contrast(1.05);
+    }
+    .about-img-frame .placeholder-text {
+      font-family: 'Playfair Display', serif; font-size: 8rem; color: rgba(201,168,76,0.2);
+    }
+    .about-accent-box {
+      position: absolute; bottom: -2rem; right: -2rem;
+      background: var(--gold); color: var(--navy);
+      padding: 1.5rem; border-radius: 12px;
+      font-family: 'Playfair Display', serif;
+    }
+    .about-accent-box strong { font-size: 2.5rem; display: block; line-height: 1; }
+    .about-accent-box span { font-size: 0.75rem; font-weight: 600; }
+    .about-content h3 { color: var(--white); font-size: 1.5rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
+    .about-content p { color: var(--gray); line-height: 1.9; margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
+    .tag {
+      padding: 0.4rem 1rem; border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 100px; font-size: 0.78rem; color: var(--gold);
+      background: rgba(201,168,76,0.05); transition: all 0.3s;
+    }
+    .tag:hover { background: rgba(201,168,76,0.15); }
+
+    /* ── EXPERIENCE TIMELINE ── */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 1px; background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    }
+    .timeline-item {
+      position: relative; padding: 0 0 3rem 2.5rem; opacity: 0;
+      transform: translateX(-20px); transition: all 0.5s;
+    }
+    .timeline-item.visible { opacity: 1; transform: translateX(0); }
+    .timeline-dot {
+      position: absolute; left: -7px; top: 6px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--navy); border: 2px solid var(--gold);
+      transition: all 0.3s;
+    }
+    .timeline-item:hover .timeline-dot { background: var(--gold); box-shadow: 0 0 20px rgba(201,168,76,0.5); }
+    .timeline-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+    .timeline-company { font-weight: 600; color: var(--gold); font-size: 0.85rem; }
+    .timeline-period {
+      font-size: 0.75rem; color: var(--gray);
+      background: rgba(201,168,76,0.08); padding: 0.2rem 0.7rem; border-radius: 100px;
+    }
+    .timeline-role { color: var(--white); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .timeline-desc { color: var(--gray); font-size: 0.9rem; line-height: 1.7; }
+
+    /* ── SERVICES / CARDS ── */
+    .cards-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--card-bg); border: 1px solid rgba(201,168,76,0.12);
+      border-radius: 16px; padding: 2rem; transition: all 0.4s;
+      position: relative; overflow: hidden;
+      opacity: 0; transform: translateY(30px);
+    }
+    .service-card.visible { opacity: 1; transform: translateY(0); }
+    .service-card::after {
+      content: ''; position: absolute; inset: 0; border-radius: 16px;
+      background: radial-gradient(circle at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%);
+      opacity: 0; transition: opacity 0.4s;
+    }
+    .service-card:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-8px) !important; box-shadow: 0 30px 60px rgba(0,0,0,0.3); }
+    .service-card:hover::after { opacity: 1; }
+    .svc-icon {
+      width: 52px; height: 52px; border-radius: 12px;
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-size: 1.2rem; margin-bottom: 1.2rem;
+    }
+    .service-card h4 { color: var(--white); font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .service-card p { color: var(--gray); font-size: 0.88rem; line-height: 1.7; }
+
+    /* ── PROJECTS ── */
+    .projects-section { background: rgba(17,34,64,0.3); }
+    .projects-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--card-bg); border: 1px solid rgba(201,168,76,0.1);
+      border-radius: 16px; padding: 1.8rem; transition: all 0.4s;
+      cursor: pointer; opacity: 0; transform: translateY(20px);
+    }
+    .project-card.visible { opacity: 1; transform: translateY(0); }
+    .project-card:hover { border-color: rgba(201,168,76,0.35); transform: translateY(-6px) !important; }
+    .project-logo {
+      width: 56px; height: 56px; border-radius: 10px; overflow: hidden;
+      background: var(--navy); border: 1px solid rgba(201,168,76,0.2);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.2rem; color: var(--gold); font-size: 1.4rem;
+    }
+    .project-logo img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
+    .project-card h4 { color: var(--white); font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .project-card p { color: var(--gray); font-size: 0.82rem; line-height: 1.6; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+    .ptag {
+      padding: 0.2rem 0.6rem; background: rgba(100,255,218,0.08);
+      border: 1px solid rgba(100,255,218,0.2); border-radius: 4px;
+      font-size: 0.7rem; color: var(--accent);
     }
 
-    .faq-container {
-      max-width: 800px;
-      margin: 0 auto;
+    /* ── SKILLS ── */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+    .skill-card {
+      background: var(--card-bg); border: 1px solid rgba(201,168,76,0.1);
+      border-radius: 14px; padding: 1.5rem; text-align: center;
+      transition: all 0.3s; opacity: 0; transform: scale(0.95);
     }
+    .skill-card.visible { opacity: 1; transform: scale(1); }
+    .skill-card:hover { border-color: rgba(201,168,76,0.4); transform: scale(1.03) !important; }
+    .skill-card i { font-size: 2rem; color: var(--gold); margin-bottom: 0.8rem; }
+    .skill-card h5 { color: var(--white); font-size: 0.9rem; margin-bottom: 0.3rem; }
+    .skill-card p { color: var(--gray); font-size: 0.78rem; line-height: 1.5; }
 
+    /* ── TESTIMONIALS ── */
+    .testimonials-section { background: rgba(17,34,64,0.3); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .testimonial-card {
+      background: var(--card-bg); border: 1px solid rgba(201,168,76,0.12);
+      border-radius: 16px; padding: 2rem; transition: all 0.3s;
+      opacity: 0; transform: translateY(20px);
+    }
+    .testimonial-card.visible { opacity: 1; transform: translateY(0); }
+    .testimonial-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-4px) !important; }
+    .quote-icon { font-size: 2.5rem; color: rgba(201,168,76,0.3); line-height: 1; margin-bottom: 1rem; font-family: Georgia, serif; }
+    .testimonial-text { color: var(--text); font-size: 0.92rem; line-height: 1.8; margin-bottom: 1.5rem; font-style: italic; }
+    .testimonial-author { display: flex; align-items: center; gap: 0.8rem; }
+    .author-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; color: var(--navy); font-size: 0.9rem;
+    }
+    .author-name { color: var(--white); font-weight: 600; font-size: 0.88rem; }
+    .author-org { color: var(--gray); font-size: 0.78rem; }
+    .stars { color: var(--gold); font-size: 0.8rem; margin-bottom: 0.3rem; }
+
+    /* ── FAQ ── */
+    .faq-wrap { max-width: 760px; margin: 0 auto; }
     .faq-item {
-      background: white;
-      border-radius: 15px;
-      margin-bottom: 1rem;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      background: var(--card-bg); border: 1px solid rgba(201,168,76,0.1);
+      border-radius: 12px; margin-bottom: 0.8rem; overflow: hidden;
+      transition: border-color 0.3s;
     }
-
-    .faq-question {
-      padding: 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      font-weight: 600;
-      color: #0073b1;
+    .faq-item.open { border-color: rgba(201,168,76,0.3); }
+    .faq-q {
+      padding: 1.3rem 1.5rem; display: flex; justify-content: space-between; align-items: center;
+      cursor: pointer; color: var(--white); font-weight: 500; font-size: 0.95rem;
     }
-
-    .faq-answer {
-      padding: 0 1.5rem 1.5rem;
-      display: none;
-      color: #666;
+    .faq-q i { color: var(--gold); transition: transform 0.3s; flex-shrink: 0; margin-left: 1rem; }
+    .faq-item.open .faq-q i { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+      padding: 0 1.5rem;
     }
+    .faq-a-inner { padding-bottom: 1.3rem; color: var(--gray); font-size: 0.9rem; line-height: 1.8; }
 
-    .faq-item.active .faq-answer {
-      display: block;
+    /* ── CTA / CV ── */
+    .cta-section {
+      padding: 6rem 0; text-align: center;
+      background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(17,34,64,0.8) 100%);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      position: relative; overflow: hidden;
     }
-
-    .faq-icon {
-      transition: transform 0.3s ease;
+    .cta-section::before {
+      content: 'SR'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      font-family: 'Playfair Display', serif; font-size: 30vw; font-weight: 900;
+      color: rgba(201,168,76,0.03); pointer-events: none; line-height: 1;
     }
-
-    .faq-item.active .faq-icon {
-      transform: rotate(45deg);
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.5rem);
+      color: var(--white); margin-bottom: 1rem;
     }
+    .cta-section p { color: var(--gray); max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.8; }
 
-    /* Achievements Section */
-    .achievements-section {
+    /* ── CONTACT ── */
+    .contact-section { padding: 6rem 0; }
+    .contact-inner { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; }
+    .contact-info h3 { color: var(--white); font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1rem; }
+    .contact-info p { color: var(--gray); line-height: 1.8; margin-bottom: 2rem; font-size: 0.9rem; }
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-link {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1rem 1.2rem; background: var(--card-bg);
+      border: 1px solid rgba(201,168,76,0.12); border-radius: 12px;
+      text-decoration: none; transition: all 0.3s;
+    }
+    .contact-link:hover { border-color: rgba(201,168,76,0.35); transform: translateX(4px); }
+    .contact-link-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: rgba(201,168,76,0.1); display: flex; align-items: center; justify-content: center;
+      color: var(--gold); flex-shrink: 0;
+    }
+    .contact-link-label { font-size: 0.75rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.08em; }
+    .contact-link-value { color: var(--white); font-size: 0.9rem; font-weight: 500; }
+
+    /* Form */
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; color: var(--gray); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 0.85rem 1rem;
+      background: var(--card-bg); border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 10px; color: var(--white); font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem; transition: border-color 0.3s; resize: vertical;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none; border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.1);
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: var(--gray); }
+    .form-btn {
+      width: 100%; padding: 1rem; background: var(--gold); color: var(--navy);
+      border: none; border-radius: 10px; font-weight: 700; font-size: 0.95rem;
+      cursor: none; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+    }
+    .form-btn:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 15px 40px rgba(201,168,76,0.3); }
+
+    /* ── MAP ── */
+    .map-frame {
+      border-radius: 16px; overflow: hidden;
+      border: 1px solid rgba(201,168,76,0.2); margin-top: 3rem;
+      filter: grayscale(40%) brightness(0.7) sepia(20%);
+      transition: filter 0.3s;
+    }
+    .map-frame:hover { filter: grayscale(0%) brightness(0.85) sepia(10%); }
+    .map-frame iframe { display: block; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2.5rem 0; border-top: 1px solid rgba(201,168,76,0.1);
       text-align: center;
     }
-
-    .achievement-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+    footer p { color: var(--gray); font-size: 0.82rem; }
+    .footer-logo { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; }
+    .social-links { display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .social-link {
+      width: 38px; height: 38px; border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.2); display: flex; align-items: center; justify-content: center;
+      color: var(--gray); text-decoration: none; font-size: 0.9rem; transition: all 0.3s;
     }
+    .social-link:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 
-    .achievement-item {
-      background: white;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    /* ── MODAL ── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 5000;
+      background: rgba(10,22,40,0.9); backdrop-filter: blur(10px);
+      align-items: center; justify-content: center; padding: 2rem;
     }
-
-    .achievement-icon {
-      font-size: 3rem;
-      color: #0073b1;
-      margin-bottom: 1rem;
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: var(--navy-mid); border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 20px; max-width: 500px; width: 100%; padding: 2.5rem;
+      position: relative; animation: modalIn 0.3s ease;
     }
-
-    /* Newsletter Section */
-    .newsletter-section {
-      background: linear-gradient(135deg, #0073b1, #00aaff);
-      color: white;
-      text-align: center;
-      padding: 60px 0;
+    @keyframes modalIn { from{opacity:0;transform:translateY(20px) scale(0.97)} to{opacity:1;transform:none} }
+    .modal-close {
+      position: absolute; top: 1.2rem; right: 1.2rem;
+      background: rgba(201,168,76,0.1); border: none; width: 32px; height: 32px;
+      border-radius: 50%; color: var(--gold); cursor: none; font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center; transition: background 0.3s;
     }
+    .modal-close:hover { background: rgba(201,168,76,0.2); }
+    .modal-box h3 { color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 1rem; }
+    .modal-box p { color: var(--gray); line-height: 1.8; font-size: 0.9rem; margin-bottom: 0.8rem; }
 
-    .newsletter-form {
-      max-width: 500px;
-      margin: 2rem auto 0;
-      display: flex;
-      gap: 1rem;
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:none} }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-visual { display: none; }
+      .hero-sub { margin: 0 auto 2.5rem; }
+      .hero-actions { justify-content: center; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-img-wrapper { max-width: 300px; margin: 0 auto; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr; }
     }
-
-    .newsletter-input {
-      flex: 1;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 50px;
-      font-size: 1rem;
-    }
-
-    /* CV Section */
-    .cv-section {
-      text-align: center;
-      background: linear-gradient(135deg, #0073b1, #00aaff);
-      color: white;
-      padding: 4rem 2rem;
-    }
-
-    .cv-download {
-      display: inline-block;
-      background: white;
-      color: #0073b1;
-      padding: 15px 40px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 1rem;
-      transition: all 0.3s ease;
-    }
-
-    .cv-download:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    }
-
-    /* Contact Form */
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: #0073b1;
-      font-weight: 500;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px 15px;
-      border: 2px solid #e1e5e9;
-      border-radius: 10px;
-      font-size: 1rem;
-      transition: border-color 0.3s ease;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #0073b1;
-    }
-
-    /* Footer */
-    .footer {
-      background: #1a1a1a;
-      color: white;
-      text-align: center;
-      padding: 2rem 0;
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes slideInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes slideInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
-      .hamburger {
-        display: block;
-      }
-      .nav-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.95);
-        padding: 1rem;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-      .nav-menu.active {
-        display: flex;
-      }
-      .nav-menu li {
-        margin: 0.5rem 0;
-      }
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      .about-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-      .newsletter-form {
-        flex-direction: column;
-      }
-      .modal-content {
-        margin: 20% auto;
-        width: 90%;
-      }
+      .hamburger { display: block; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--navy); padding: 1.5rem 2.5rem; border-bottom: 1px solid rgba(201,168,76,0.1); gap: 1.2rem; }
+      .nav-links.open { display: flex; }
+      nav { position: fixed; }
+      .hero h1 { font-size: 2.4rem; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr 1fr; }
     }
-
-    /* Scroll animations */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease;
+    @media (max-width: 500px) {
+      .projects-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
     }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    @media (hover: none) { .cursor, .cursor-ring { display: none; } body { cursor: auto; } * { cursor: auto !important; } }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">Shalim Reza</div>
-      <button class="hamburger" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-      <ul class="nav-menu">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#expertise" class="nav-link">Expertise</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#cv" class="nav-link">CV & Contact</a></li>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="logo-mark">SR<span>.</span></div>
+      <button class="hamburger" id="menuBtn"><i class="fas fa-bars"></i></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Shalim Reza</h1>
-      <p>ERP Implementation Expert | Business Analyst | Project Management Specialist | IT Solutions Architect</p>
-      <div class="hero-buttons">
-        <a href="#services" class="btn btn-primary"><i class="fas fa-briefcase"></i> My Services</a>
-        <a href="#cv" class="btn btn-secondary"><i class="fas fa-download"></i> Download CV</a>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-grid-lines"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-tag">Available for Projects</div>
+        <h1>ERP Expert &<br><em>Business Analyst</em></h1>
+        <p class="hero-sub">Transforming complex business challenges into streamlined IT solutions. 4+ years delivering enterprise implementations across banking, microfinance, and public sectors.</p>
+        <div class="hero-actions">
+          <a href="#services" class="btn-gold"><i class="fas fa-briefcase"></i> View Services</a>
+          <a href="/images/CV of Shalim Reza.pdf" class="btn-outline" download><i class="fas fa-download"></i> Download CV</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-badge b1"><i class="fas fa-check-circle"></i> 20+ Projects Delivered</div>
+        <div class="hero-card">
+          <div class="profile-ring">SR</div>
+          <h3>Shalim Reza</h3>
+          <p>ERP Implementation Expert · Dhaka, BD</p>
+          <div class="mini-stats">
+            <div class="mini-stat"><span class="mini-stat-num">4+</span><span class="mini-stat-label">Years</span></div>
+            <div class="mini-stat"><span class="mini-stat-num">20+</span><span class="mini-stat-label">Projects</span></div>
+            <div class="mini-stat"><span class="mini-stat-num">20+</span><span class="mini-stat-label">Trainings</span></div>
+          </div>
+        </div>
+        <div class="floating-badge b2"><i class="fas fa-globe"></i> Multi-Country Ops</div>
       </div>
     </div>
   </section>
 
-  <!-- Stats Counter with Popups -->
+  <!-- MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-track" id="marqueeTrack">
+      <span class="marquee-item"><i class="fas fa-cogs"></i> ERP Implementation</span>
+      <span class="marquee-item"><i class="fas fa-users-cog"></i> HR & Payroll Systems</span>
+      <span class="marquee-item"><i class="fas fa-chart-bar"></i> Business Analysis</span>
+      <span class="marquee-item"><i class="fas fa-project-diagram"></i> Project Management</span>
+      <span class="marquee-item"><i class="fas fa-database"></i> Data Management</span>
+      <span class="marquee-item"><i class="fas fa-handshake"></i> Stakeholder Management</span>
+      <span class="marquee-item"><i class="fas fa-shield-alt"></i> Compliance Systems</span>
+      <span class="marquee-item"><i class="fas fa-chalkboard-teacher"></i> User Training</span>
+      <!-- duplicate for seamless loop -->
+      <span class="marquee-item"><i class="fas fa-cogs"></i> ERP Implementation</span>
+      <span class="marquee-item"><i class="fas fa-users-cog"></i> HR & Payroll Systems</span>
+      <span class="marquee-item"><i class="fas fa-chart-bar"></i> Business Analysis</span>
+      <span class="marquee-item"><i class="fas fa-project-diagram"></i> Project Management</span>
+      <span class="marquee-item"><i class="fas fa-database"></i> Data Management</span>
+      <span class="marquee-item"><i class="fas fa-handshake"></i> Stakeholder Management</span>
+      <span class="marquee-item"><i class="fas fa-shield-alt"></i> Compliance Systems</span>
+      <span class="marquee-item"><i class="fas fa-chalkboard-teacher"></i> User Training</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
   <section class="stats-section">
-    <div class="section">
+    <div class="stats-inner">
       <div class="stats-grid">
-        <div class="stat-item" onclick="openModal('experienceModal')">
-          <div class="stat-number" data-count="3.5+">0</div>
-          <div class="stat-label">Years Experience</div>
+        <div class="stat-box" onclick="openModal('m-exp')">
+          <div class="stat-icon"><i class="fas fa-history"></i></div>
+          <span class="stat-num" data-target="4">0</span>
+          <div class="stat-lbl">Years of Experience</div>
         </div>
-        <div class="stat-item" onclick="openModal('projectsModal')">
-          <div class="stat-number" data-count="20+">0</div>
-          <div class="stat-label">Projects Completed</div>
+        <div class="stat-box" onclick="openModal('m-proj')">
+          <div class="stat-icon"><i class="fas fa-rocket"></i></div>
+          <span class="stat-num" data-target="20" data-suffix="+">0</span>
+          <div class="stat-lbl">Projects Completed</div>
         </div>
-       <!--  <div class="stat-item" onclick="openModal('clientsModal')">
-          <div class="stat-number" data-count="25+">0</div>
-          <div class="stat-label">Happy Clients</div>
-        </div>-->
-        <div class="stat-item" onclick="openModal('trainingsModal')">
-          <div class="stat-number" data-count="20+">0</div>
-          <div class="stat-label">Trainings Conducted</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Popups Modals -->
-  <div id="experienceModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('experienceModal')" aria-label="Close modal">&times;</span>
-      <h3>3.5+ Years of Experience</h3>
-      <p>Over a decade in IT implementations, from junior roles to project management, spanning multiple sectors like banking, microfinance, and public health. Key focus on ERP systems, business process improvement, and team leadership.</p>
-      <p></p>
-    </div>
-  </div>
-
-  <div id="projectsModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('projectsModal')" aria-label="Close modal">&times;</span>
-      <h3>20+ Projects Completed</h3>
-      <p>Led and implemented over 20 IT projects, including ERP deployments, payroll automations, and digital mapping solutions. All projects delivered on time with high client satisfaction.</p>
-      <p>Highlights: Prime Bank ERP, Umoja Microfinance across 4 countries, Bangladesh Police Inventory System, and various HR/Payroll implementations in financial institutions.</p>
-    </div>
-  </div>
-
-  <div id="clientsModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('clientsModal')" aria-label="Close modal">&times;</span>
-      <h3>25+ Happy Clients</h3>
-      <p>Served more than 30 organizations, building long-term relationships through reliable IT solutions and excellent support.</p>
-      <p>Notable Clients: Bangladesh Development Bank, Prime Bank Foundation, DX Group, Investment Corporation of Bangladesh, Umoja Microfinance, NGO Forum, Bangladesh Police, BUET, Uttara Bank, and more.</p>
-    </div>
-  </div>
-
-  <div id="trainingsModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('trainingsModal')" aria-label="Close modal">&times;</span>
-      <h3>20+ Trainings Conducted</h3>
-      <p>Conducted over 20 training sessions for end-users, focusing on system adoption, ERP usage, and operational efficiency. Includes hands-on workshops and documentation preparation.</p>
-      <p>Examples: Bangladesh Police Inventory Training, various ERP user trainings for banks and NGOs, change management sessions for system implementations.</p>
-    </div>
-  </div>
-
-  <!-- About Section -->
-  <section id="about" class="section fade-in">
-    <h2 class="section-title">About Me</h2>
-    <div class="about-grid">
-      <div class="about-image">
-        <img src="/images/shalimreza.png" alt="Professional Photo of Shalim Reza">
-      </div>
-      <div class="about-content">
-        <h3>Versatile IT Professional & Business Analyst</h3>
-        <p>Seasoned IT professional with extensive experience in ERP implementations, HR & payroll systems, and project management. Transitioning to Business Analysis with expertise in process optimization, system integration, and stakeholder management. Proven track record in delivering complex IT solutions across banking, microfinance, and public sector organizations.</p>
-        <p><strong>Key Expertise:</strong> Requirements Gathering | Business Process Improvement | ERP Customization | Compliance Management | Stakeholder Communication</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience Section (Expertise) -->
-  <section id="expertise" class="section fade-in" style="background: #f8f9fa;">
-    <h2 class="section-title">Professional Experience</h2>
-    <div class="cards-grid">
-    
-      <div class="card">
-        <div class="card-icon">
-          <i class="fas fa-cogs"></i>
-        </div>
-        <h3>Product Manager</h3>
-        <p><strong>DX Group</strong></p>
-        <p>Managing product lifecycle for Service Management solutions including service center operations and financial modules with Analysis this business.</p>
-      </div>
-       <div class="card">
-        <div class="card-icon">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <h3>Project Coordinator and Implementation</h3>
-        <p><strong>Investment Corporation of Bangladesh</strong></p>
-        <p>Overseeing ERP & Payroll implementation with focus on compliance and regulatory reporting.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">
-          <i class="fas fa-cogs"></i>
-        </div>
-        <h3>Implementation & Support Engineer</h3>
-        <p><strong>Bangladesh Development Bank PLC.</strong></p>
-        <p>Leading ERP implementation for HR, Payroll, ACR, PF, Pensions and financial modules with a focus on compliance.</p>
-      </div>
-
-       
-      <div class="card">
-        <div class="card-icon">
-          <i class="fas fa-cogs"></i>
-        </div>
-        <h3>Implementation & Support Engineer</h3>
-        <p><strong>LC Waikiki - RMG Sector.</strong></p>
-        <p>Leading ERP implementation for HR, Payroll, Accounting, BOM, SCM, Operations, Inventory and financial modules with a focus on compliance.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">
-          <i class="fas fa-plus"></i>
-        </div>
-        <h3>Implementation & Support Engineer</h3>
-        <p><strong>Uttara Bank PLC.</strong></p>
-        <p>Leading ERP implementation for HR, Payroll, Accounting, PF, Gratuity, Movement, Discipline & Compliance, ACR, and financial modules with a focus on compliance.</p>
-      </div>
-      
-      <div class="card">
-        <div class="card-icon">
-          <i class="fas fa-s"></i>
-        </div>
-        <h3>Implementation & Support Engineer</h3>
-        <p><strong>Prime Bank Foundation</strong></p>
-        <p>Leading ERP implementation projects focusing on HR, Payroll, Accounting, and Supply Chain Management modules.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">
-          <i class="fas fa-database"></i>
-        </div>
-        <h3>Operations Support and Data Management</h3>
-        <p><strong>Umoja Microfinance International</strong></p>
-        <p>Managing billions of data for real-time smooth operations in microfinance systems.</p>
-      </div>
-     
-      <div class="card">
-        <div class="card-icon">
-          <i class="fas fa-users"></i>
-        </div>
-        <h3>Implementation & Support Engineer</h3>
-        <p><strong>NGO Forum For Public Health</strong></p>
-        <p>Deploying healthcare management systems and training end-users on complex software solutions.</p>
-      </div>
-        <div class="card">
-        <div class="card-icon">
-          <i class="fas fa-project-diagram"></i>
-        </div>
-        <h3>Implementation & Co-ordination</h3>
-        <p><strong>BUET</strong></p>
-        <p>I am coordinating this project, handling data management and conducting user training sessions.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="section fade-in">
-    <h2 class="section-title">Services</h2>
-    <div class="services-grid">
-      <div class="service-item">
-        <i class="fas fa-cogs service-icon"></i>
-        <h4>ERP Implementation</h4>
-        <p>Complete ERP system deployment, customization, and integration for HR, Payroll, Accounting, and SCM modules.</p>
-      </div>
-      <div class="service-item">
-        <i class="fas fa-file-invoice-dollar service-icon"></i>
-        <h4>HR & Payroll Solutions</h4>
-        <p>Automated payroll processing, employee lifecycle management, and compliance systems.</p>
-      </div>
-      <div class="service-item">
-        <i class="fas fa-chart-bar service-icon"></i>
-        <h4>Business Analysis</h4>
-        <p>Requirements gathering, process optimization, stakeholder management, and workflow analysis.</p>
-      </div>
-      <div class="service-item">
-        <i class="fas fa-project-diagram service-icon"></i>
-        <h4>Project Management</h4>
-        <p>End-to-end project delivery, timeline management, risk assessment, and team coordination.</p>
-      </div>
-      <div class="service-item">
-        <i class="fas fa-users-cog service-icon"></i>
-        <h4>User Training</h4>
-        <p>Comprehensive training programs, documentation, and change management for system adoption.</p>
-      </div>
-      <div class="service-item">
-        <i class="fas fa-database service-icon"></i>
-        <h4>Data Management</h4>
-        <p>Large-scale data migration, validation, reporting, and business intelligence solutions.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section class="section fade-in" style="background: #f8f9fa;">
-    <h2 class="section-title">Key Projects</h2>
-    <div class="cards-grid">
-      <div class="card">
-        <img src="/images/bdbl.png" alt="Bangladesh Development Bank ERP" style="height: 100px; border-radius:10px; margin-left: 5.5rem; margin-bottom:1rem;">
-        <h3>Bangladesh Development Bank PLC.</h3>
-        <p>Comprehensive ERP implementation including HR, Payroll, Accounting, Pension and PF modules.</p>
-      </div>
-      <div class="card">
-        <img src="/images/Logo_of_Uttara_Bank.svg.png" alt="Uttara Bank ERP" style="height: 100px; border-radius:10px; margin-left: 5.5rem; margin-bottom:1rem;">
-        <h3>Uttara Bank PLC.</h3>
-        <p>Comprehensive ERP implementation including HR, Payroll, Accounting, PF, Gratuity, Movement and Training modules.</p>
-      </div>
-      <div class="card">
-        <img src="/images/prime_bank_foundation_logo.jpeg" alt="Prime Bank Foundation ERP" style="height: 100px; border-radius:10px; margin-left: 5.5rem; margin-bottom:1rem;">
-        <h3>Prime Bank Foundation ERP</h3>
-        <p>Comprehensive ERP implementation including HR, Payroll, Accounting, Inventory, and SCM modules.</p>
-      </div>
-      <div class="card">
-        <img src="/images/lcwaikik.png" alt="LC Waikiki ERP" style="height: 100px; border-radius:10px; margin-left: 5.5rem; margin-bottom:1rem;">
-        <h3>LC Waikiki - RMG Sector</h3>
-        <p>Comprehensive ERP implementation including HR, Payroll, Accounting, Inventory, and SCM modules.</p>
-      </div>
-      <div class="card">
-        <img src="/images/labright_bangladesh_limited_logo.jpeg" alt="LabRight Bangladesh ERP" style="height: 100px; border-radius:10px; margin-left: 5.5rem; margin-bottom:1rem;">
-        <h3>LabRight Bangladesh</h3>
-        <p>Comprehensive ERP implementation including HR and SCM modules.</p>
-      </div>
-      <div class="card">
-        <img src="/images/NGO-Forum-for-Public-Health-logo.png" alt="NGO Forum ERP" style="height: 100px; border-radius:10px; margin-left: 5.5rem; margin-bottom:1rem;">
-        <h3>NGO Forum for Public Health</h3>
-        <p>Comprehensive ERP implementation including HR, Payroll, Accounting, Inventory, and SCM modules.</p>
-      </div>
-      <div class="card">
-        <img src="/images/umoja.png" alt="Umoja Microfinance" style="height: 100px; border-radius:10px; margin-left: 5.5rem; margin-bottom:1rem;">
-        <h3>Umoja Microfinance System</h3>
-        <p>Multi-country micro loan management system deployment across 4 countries.</p>
-      </div>
-      <div class="card">
-        <img src="/images/icb.png" alt="ICB Payroll" style="height: 100px; border-radius:10px; margin-left: 5.5rem; margin-bottom:1rem;">
-        <h3>Investment Corporation of Bangladesh</h3>
-        <p>Automated payroll processing with PF, Car Scheme Loan, Staff Loan, HR and Discipline Compliance, Pension, Income Tax compliance, and regulatory reporting.</p>
-      </div>
-      <div class="card">
-        <img src="/images/boat.png" alt="Dhaka Boat Club Limited" style="height: 100px; border-radius:10px; margin-left: 5.5rem; margin-bottom:1rem;">
-        <h3>Dhaka Boat Club Limited</h3>
-        <p>Automated payroll processing, HR and Discipline Compliance, BOM, SCM, Inventory and regulatory reporting.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section class="section fade-in">
-    <h2 class="section-title">Core Competencies</h2>
-    <div class="skills-grid">
-    
-      <div class="skill-item">
-        <i class="fas fa-file-invoice-dollar" style="font-size:2rem; color:#0073b1; margin-bottom:1rem;"></i>
-        <h4>HR & Payroll Systems</h4>
-        <p>Specialized in employee management, salary processing, and compliance</p>
-      </div>
-        <div class="skill-item">
-        <i class="fas fa-cogs" style="font-size:2rem; color:#0073b1; margin-bottom:1rem;"></i>
-        <h4>ERP Implementation</h4>
-        <p>Expert in deploying and customizing enterprise resource planning systems</p>
-      </div>
-      <div class="skill-item">
-        <i class="fas fa-chart-bar" style="font-size:2rem; color:#0073b1; margin-bottom:1rem;"></i>
-        <h4>Business Analysis</h4>
-        <p>Requirements gathering, process optimization, and stakeholder management</p>
-      </div>
-      <div class="skill-item">
-        <i class="fas fa-project-diagram" style="font-size:2rem; color:#0073b1; margin-bottom:1rem;"></i>
-        <h4>Project Management</h4>
-        <p>End-to-end project delivery with focus on timelines and quality</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Achievements Section -->
-  <section class="section achievements-section fade-in" style="background: #f8f9fa;">
-    <h2 class="section-title">Achievements & Milestones</h2>
-    <div class="achievement-grid">
-      <div class="achievement-item">
-        <i class="fas fa-trophy achievement-icon"></i>
-        <h3>20+ Successful Implementations</h3>
-        <p>Delivered complex IT projects across diverse sectors with 100% client satisfaction.</p>
-      </div>
-      <div class="achievement-item">
-        <i class="fas fa-globe achievement-icon"></i>
-        <h3>Multi-Country Operations</h3>
-        <p>Managed microfinance systems spanning 4 countries, handling millions of records.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="section testimonials-section fade-in">
-    <h2 class="section-title">What People Say</h2>
-    <div class="testimonial-grid">
-      <div class="testimonial-card">
-        <img src="https://placehold.co/80x80?text=Client1" alt="Client testimonial" class="testimonial-img">
-        <div class="stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-        <p>"Shalim's ERP implementation transformed our operations. Professional and efficient!"</p>
-        <h4>- Investment Corporation of Bangladesh</h4>
-      </div>
-      <div class="testimonial-card">
-        <img src="https://placehold.co/80x80?text=Client2" alt="Client testimonial" class="testimonial-img">
-        <div class="stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-        <p>"Outstanding project management skills. Delivered on time and within budget."</p>
-        <h4>- LabRight Bangladesh</h4>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="section faq-section fade-in">
-    <h2 class="section-title">Frequently Asked Questions</h2>
-    <div class="faq-container">
-      <div class="faq-item">
-        <div class="faq-question">
-          What is your expertise in ERP systems?
-          <i class="fas fa-plus faq-icon"></i>
-        </div>
-        <div class="faq-answer">
-          I specialize in implementing and customizing ERP modules for HR, Payroll, Accounting, Inventory, and Supply Chain Management, ensuring seamless integration and compliance.
-        </div>
-      </div>
-
-<!--
-       <div class="faq-item">
-        <div class="faq-question">
-          What is your expertise in ERP systems?
-          <i class="fas fa-plus faq-icon"></i>
-        </div>
-        <div class="faq-answer">
-          I specialize in implementing and customizing ERP modules for HR, Payroll, Accounting, Inventory, and Supply Chain Management, ensuring seamless integration and compliance.
-        </div>
-      </div>
-
-
-       <div class="faq-item">
-        <div class="faq-question">
-          What is your expertise in ERP systems?
-          <i class="fas fa-plus faq-icon"></i>
-        </div>
-        <div class="faq-answer">
-          I specialize in implementing and customizing ERP modules for HR, Payroll, Accounting, Inventory, and Supply Chain Management, ensuring seamless integration and compliance.
-        </div>
-      </div>
-    -->
-
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          How do you approach business analysis?
-          <i class="fas fa-plus faq-icon"></i>
-        </div>
-        <div class="faq-answer">
-          I focus on thorough requirements gathering, process mapping, stakeholder interviews, and data analysis to identify improvements and deliver optimized solutions.
+        <div class="stat-box" onclick="openModal('m-train')">
+          <div class="stat-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <span class="stat-num" data-target="20" data-suffix="+">0</span>
+          <div class="stat-lbl">Trainings Conducted</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Newsletter Section -->
-  <section class="newsletter-section">
-    <div class="section">
-      <h2 class="section-title" style="color:white;">Stay Updated</h2>
-      <p style="text-align:center; max-width:600px; margin:0 auto 2rem;">Subscribe for insights on IT implementations and business analysis tips.</p>
-      <form class="newsletter-form">
-        <input type="email" class="newsletter-input" placeholder="Enter your email" required aria-label="Email for newsletter">
-        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Subscribe</button>
-      </form>
+  <!-- ABOUT -->
+  <section class="section about-section" id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-img-wrapper reveal-left">
+          <div class="about-img-frame">
+            <img src="/images/shalimreza.png" alt="Shalim Reza" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="placeholder-text" style="display:none">SR</div>
+          </div>
+          <div class="about-accent-box">
+            <strong>4+</strong>
+            <span>Years Expert</span>
+          </div>
+        </div>
+        <div class="about-content reveal-right">
+          <div class="section-label">Who I Am</div>
+          <h2 class="section-title">Versatile IT<br>Professional</h2>
+          <p>Seasoned IT professional with extensive experience in ERP implementations, HR & payroll systems, and project management. Currently transitioning to Business Analysis with deep expertise in process optimization, system integration, and stakeholder management.</p>
+          <p>Proven track record delivering complex IT solutions across banking, microfinance, RMG sector, and public sector organizations — with a commitment to compliance, quality, and lasting client relationships.</p>
+          <div class="about-tags">
+            <span class="tag">Requirements Gathering</span>
+            <span class="tag">Process Optimization</span>
+            <span class="tag">ERP Customization</span>
+            <span class="tag">Compliance Management</span>
+            <span class="tag">Stakeholder Communication</span>
+            <span class="tag">Change Management</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CV Section -->
-  <section id="cv" class="cv-section">
-    <div class="section">
-      <h2 class="section-title" style="color:white;">Download My CV</h2>
-      <p style="font-size:1.2rem; margin-bottom:2rem;">Get detailed professional experience, skills, and achievements</p>
-      <a href="/images/CV of Shalim Reza.pdf" class="cv-download" download>
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="section-inner">
+      <div class="section-label">Career Path</div>
+      <h2 class="section-title">Professional Experience</h2>
+      <p class="section-sub">A track record of delivering enterprise solutions across diverse sectors and organizations.</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta"><span class="timeline-company">DX Group</span><span class="timeline-period">Current</span></div>
+          <div class="timeline-role">Product Manager</div>
+          <div class="timeline-desc">Managing product lifecycle for Service Management solutions including service center operations and financial modules with business analysis focus.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta"><span class="timeline-company">Investment Corporation of Bangladesh</span></div>
+          <div class="timeline-role">Project Coordinator & Implementation Specialist</div>
+          <div class="timeline-desc">Overseeing ERP & Payroll implementation with focus on compliance, regulatory reporting, income tax, PF, Pension, and Car/Staff loan schemes.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta"><span class="timeline-company">Bangladesh Development Bank PLC.</span></div>
+          <div class="timeline-role">Implementation & Support Engineer</div>
+          <div class="timeline-desc">Led ERP implementation for HR, Payroll, ACR, PF, Pension and financial modules with full compliance management.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta"><span class="timeline-company">Uttara Bank PLC.</span></div>
+          <div class="timeline-role">Implementation & Support Engineer</div>
+          <div class="timeline-desc">Delivered ERP for HR, Payroll, Accounting, PF, Gratuity, Movement, Discipline & Compliance, and ACR modules.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta"><span class="timeline-company">LC Waikiki — RMG Sector</span></div>
+          <div class="timeline-role">Implementation & Support Engineer</div>
+          <div class="timeline-desc">Led comprehensive ERP covering HR, Payroll, Accounting, BOM, SCM, Operations, and Inventory modules for a major international brand.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta"><span class="timeline-company">Umoja Microfinance International</span></div>
+          <div class="timeline-role">Operations Support & Data Management</div>
+          <div class="timeline-desc">Managed large-scale data for real-time microfinance operations across 4 countries — Tanzania, Rwanda, Burundi, and Uganda.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta"><span class="timeline-company">NGO Forum For Public Health</span></div>
+          <div class="timeline-role">Implementation & Support Engineer</div>
+          <div class="timeline-desc">Deployed healthcare management systems and trained end-users on complex software solutions.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services" style="background:rgba(17,34,64,0.4)">
+    <div class="section-inner">
+      <div class="section-label">What I Offer</div>
+      <h2 class="section-title">Services</h2>
+      <p class="section-sub">End-to-end IT consulting and implementation services tailored to your business needs.</p>
+      <div class="cards-grid">
+        <div class="service-card">
+          <div class="svc-icon"><i class="fas fa-cogs"></i></div>
+          <h4>ERP Implementation</h4>
+          <p>Complete ERP system deployment, customization, and integration for HR, Payroll, Accounting, and SCM modules across diverse sectors.</p>
+        </div>
+        <div class="service-card">
+          <div class="svc-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <h4>HR & Payroll Solutions</h4>
+          <p>Automated payroll processing, employee lifecycle management, compliance systems, PF, Gratuity, and Tax management.</p>
+        </div>
+        <div class="service-card">
+          <div class="svc-icon"><i class="fas fa-chart-bar"></i></div>
+          <h4>Business Analysis</h4>
+          <p>Requirements gathering, process mapping, stakeholder interviews, and workflow analysis to identify and deliver optimized solutions.</p>
+        </div>
+        <div class="service-card">
+          <div class="svc-icon"><i class="fas fa-project-diagram"></i></div>
+          <h4>Project Management</h4>
+          <p>End-to-end project delivery, timeline management, risk assessment, resource coordination, and quality assurance.</p>
+        </div>
+        <div class="service-card">
+          <div class="svc-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <h4>User Training</h4>
+          <p>Comprehensive training programs, documentation creation, and change management strategies for seamless system adoption.</p>
+        </div>
+        <div class="service-card">
+          <div class="svc-icon"><i class="fas fa-database"></i></div>
+          <h4>Data Management</h4>
+          <p>Large-scale data migration, validation, reporting automation, and business intelligence solutions for operational excellence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section projects-section" id="projects">
+    <div class="section-inner">
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-title">Key Projects</h2>
+      <p class="section-sub">Delivering enterprise solutions across banking, microfinance, public health, and manufacturing sectors.</p>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-logo"><i class="fas fa-university"></i></div>
+          <h4>Bangladesh Development Bank PLC.</h4>
+          <p>Comprehensive ERP: HR, Payroll, Accounting, Pension, ACR & PF modules.</p>
+          <div class="project-tags"><span class="ptag">HR</span><span class="ptag">Payroll</span><span class="ptag">Banking</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-logo"><i class="fas fa-landmark"></i></div>
+          <h4>Uttara Bank PLC.</h4>
+          <p>Full ERP: HR, Payroll, Accounting, PF, Gratuity, Movement & Compliance modules.</p>
+          <div class="project-tags"><span class="ptag">ERP</span><span class="ptag">Compliance</span><span class="ptag">Banking</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-logo"><i class="fas fa-building"></i></div>
+          <h4>Prime Bank Foundation</h4>
+          <p>ERP for HR, Payroll, Accounting, Inventory & Supply Chain Management.</p>
+          <div class="project-tags"><span class="ptag">SCM</span><span class="ptag">Accounting</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-logo"><i class="fas fa-tshirt"></i></div>
+          <h4>LC Waikiki — RMG Sector</h4>
+          <p>End-to-end ERP: HR, Payroll, BOM, SCM, Operations & Inventory.</p>
+          <div class="project-tags"><span class="ptag">RMG</span><span class="ptag">BOM</span><span class="ptag">SCM</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-logo"><i class="fas fa-globe-africa"></i></div>
+          <h4>Umoja Microfinance</h4>
+          <p>Multi-country micro loan management system across 4 African countries.</p>
+          <div class="project-tags"><span class="ptag">Multi-Country</span><span class="ptag">Microfinance</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-logo"><i class="fas fa-heartbeat"></i></div>
+          <h4>NGO Forum For Public Health</h4>
+          <p>Healthcare management ERP: HR, Payroll, Accounting & Inventory modules.</p>
+          <div class="project-tags"><span class="ptag">NGO</span><span class="ptag">Health</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-logo"><i class="fas fa-chart-line"></i></div>
+          <h4>Investment Corporation of Bangladesh</h4>
+          <p>Payroll, PF, Car Scheme, Staff Loan, HR, Discipline & Income Tax compliance.</p>
+          <div class="project-tags"><span class="ptag">Payroll</span><span class="ptag">Tax</span><span class="ptag">Finance</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-logo"><i class="fas fa-anchor"></i></div>
+          <h4>Dhaka Boat Club Limited</h4>
+          <p>Payroll processing, HR, BOM, SCM, Inventory & regulatory reporting system.</p>
+          <div class="project-tags"><span class="ptag">HR</span><span class="ptag">Inventory</span><span class="ptag">SCM</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-logo"><i class="fas fa-flask"></i></div>
+          <h4>LabRight Bangladesh</h4>
+          <p>ERP implementation covering HR and Supply Chain Management modules.</p>
+          <div class="project-tags"><span class="ptag">HR</span><span class="ptag">SCM</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-label">Competencies</div>
+      <h2 class="section-title">Core Skills</h2>
+      <p class="section-sub">A comprehensive toolkit built through years of hands-on enterprise implementation work.</p>
+      <div class="skills-grid">
+        <div class="skill-card"><i class="fas fa-cogs"></i><h5>ERP Implementation</h5><p>Expert in deploying and customizing enterprise resource planning systems</p></div>
+        <div class="skill-card"><i class="fas fa-file-invoice-dollar"></i><h5>HR & Payroll Systems</h5><p>Specialized in employee management, salary processing, and compliance</p></div>
+        <div class="skill-card"><i class="fas fa-chart-bar"></i><h5>Business Analysis</h5><p>Requirements gathering, process optimization, and stakeholder management</p></div>
+        <div class="skill-card"><i class="fas fa-project-diagram"></i><h5>Project Management</h5><p>End-to-end project delivery with focus on timelines and quality</p></div>
+        <div class="skill-card"><i class="fas fa-database"></i><h5>Data Management</h5><p>Large-scale migration, validation, and reporting solutions</p></div>
+        <div class="skill-card"><i class="fas fa-shield-alt"></i><h5>Compliance & Regulatory</h5><p>Ensuring systems meet legal and regulatory requirements</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testimonials-section" id="testimonials">
+    <div class="section-inner">
+      <div class="section-label">Client Feedback</div>
+      <h2 class="section-title">What People Say</h2>
+      <p class="section-sub">Trusted by organizations across Bangladesh and internationally.</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">Shalim's ERP implementation transformed our operations completely. His professionalism and efficiency were outstanding throughout the entire process.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">ICB</div>
+            <div><div class="author-name">Operations Team</div><div class="author-org">Investment Corporation of Bangladesh</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">Outstanding project management skills. The system was delivered on time, within budget, and exceeded our expectations for functionality.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">LR</div>
+            <div><div class="author-name">Management Team</div><div class="author-org">LabRight Bangladesh</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-label">FAQs</div>
+      <h2 class="section-title">Common Questions</h2>
+      <p class="section-sub">Everything you need to know about working with me.</p>
+      <div class="faq-wrap">
+        <div class="faq-item">
+          <div class="faq-q">What is your expertise in ERP systems?<i class="fas fa-plus"></i></div>
+          <div class="faq-a"><div class="faq-a-inner">I specialize in implementing and customizing ERP modules for HR, Payroll, Accounting, Inventory, and Supply Chain Management. Each implementation is tailored to the client's specific business processes, ensuring seamless integration and full regulatory compliance.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How do you approach business analysis?<i class="fas fa-plus"></i></div>
+          <div class="faq-a"><div class="faq-a-inner">I follow a structured methodology: thorough requirements gathering via stakeholder interviews, process mapping with AS-IS and TO-BE analysis, gap identification, and delivering clear functional specifications that bridge business needs with technical solutions.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What sectors do you serve?<i class="fas fa-plus"></i></div>
+          <div class="faq-a"><div class="faq-a-inner">I have delivered projects across banking, microfinance (including multi-country operations), RMG/manufacturing, public health NGOs, government organizations, and academic institutions. My experience spans both private and public sector environments.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you offer post-implementation support?<i class="fas fa-plus"></i></div>
+          <div class="faq-a"><div class="faq-a-inner">Yes. Post-go-live support is a critical part of every engagement. I provide user training, system documentation, troubleshooting, and change management support to ensure long-term success and adoption.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="cv">
+    <div style="position:relative;z-index:1">
+      <div class="section-label" style="justify-content:center">Get My CV</div>
+      <h2>Ready to Work Together?</h2>
+      <p>Download my detailed CV to explore my full experience, skills, and project portfolio.</p>
+      <a href="/images/CV of Shalim Reza.pdf" class="btn-gold" download style="display:inline-flex">
         <i class="fas fa-file-pdf"></i> Download CV
-      </a>  
+      </a>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section fade-in" style="background: #f8f9fa;">
-    <h2 class="section-title">Get In Touch</h2>
-    <form class="contact-form">
-      <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" required aria-label="Full Name">
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Let's Talk</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>Have a project in mind, need a consultation, or want to explore how ERP can transform your operations? Reach out — I'd love to hear from you.</p>
+          <div class="contact-links">
+            <a href="tel:+8801734898751" class="contact-link">
+              <div class="contact-link-icon"><i class="fas fa-phone"></i></div>
+              <div><div class="contact-link-label">Phone</div><div class="contact-link-value">+880 1734 898751</div></div>
+            </a>
+            <a href="mailto:theshalim01@gmail.com" class="contact-link">
+              <div class="contact-link-icon"><i class="fas fa-envelope"></i></div>
+              <div><div class="contact-link-label">Email</div><div class="contact-link-value">theshalim01@gmail.com</div></div>
+            </a>
+            <a href="https://www.linkedin.com/in/shalimreza" target="_blank" class="contact-link">
+              <div class="contact-link-icon"><i class="fab fa-linkedin"></i></div>
+              <div><div class="contact-link-label">LinkedIn</div><div class="contact-link-value">linkedin.com/in/shalimreza</div></div>
+            </a>
+            <a href="#" class="contact-link">
+              <div class="contact-link-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div><div class="contact-link-label">Location</div><div class="contact-link-value">Dhaka, Bangladesh</div></div>
+            </a>
+          </div>
+        </div>
+        <form id="contactForm">
+          <div class="form-group"><label>Full Name</label><input type="text" placeholder="John Doe" required></div>
+          <div class="form-group"><label>Email Address</label><input type="email" placeholder="john@company.com" required></div>
+          <div class="form-group"><label>Subject</label><input type="text" placeholder="ERP Consultation" required></div>
+          <div class="form-group"><label>Message</label><textarea rows="5" placeholder="Tell me about your project..." required></textarea></div>
+          <button type="submit" class="form-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" required aria-label="Email Address">
+      <div class="map-frame" style="margin-top:3rem">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.9028696118074!2d90.39156311543155!3d23.75088509463185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b894b6c31c39%3A0x8d039f5c4176b93a!2sDhaka!5e0!3m2!1sen!2sbd!4v1630220545901!5m2!1sen!2sbd" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
-      <div class="form-group">
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" required aria-label="Subject">
-      </div>
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" rows="6" required aria-label="Message"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary" style="width:100%; font-size:1.1rem;">
-        <i class="fas fa-paper-plane"></i> Send Message
-      </button>
-    </form>
-
-
-<div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:stretch; margin-top:3rem; padding:2rem; background:white; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-
-  <!-- Left: Map -->
-  <div style="flex:1 1 50%; padding:1rem; min-width:300px;">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.9028696118074!2d90.39156311543155!3d23.75088509463185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b894b6c31c39%3A0x8d039f5c4176b93a!2sDhaka!5e0!3m2!1sen!2sbd!4v1630220545901!5m2!1sen!2sbd" 
-      width="100%" 
-      height="100%" 
-      style="min-height:300px; border:0; border-radius:10px;" 
-      allowfullscreen="" 
-      loading="lazy">
-    </iframe>
-  </div>
-
-  <!-- Right: Contact Info -->
-  <div style="flex:1 1 50%; padding:1rem; text-align:left; min-width:300px;">
-    <h3 style="margin-bottom:1rem;"><i class="fas fa-address-book" style="color:#0077b5; animation:bounce 2s infinite;"></i> Contact Information</h3>
-    
-    <p><i class="fas fa-map-marker-alt" style="color:#dc3545; margin-right:10px; animation:bounce 2s infinite;"></i> Dhaka, Bangladesh</p>
-    
-    <p><i class="fas fa-phone-alt" style="color:#28a745; margin-right:10px; animation:bounce 2s infinite;"></i> <a href="tel:+880 1734 898751" style="color:#333; text-decoration:none;">+880 1734 898751</a></p>
-    
-    <p><i class="fas fa-envelope" style="color:#17a2b8; margin-right:10px; animation:bounce 2s infinite;"></i> <a href="mailto:theshalim01@gmail.com" style="color:#333; text-decoration:none;">theshalim01@gmail.com</a></p>
-    
-    <p><i class="fab fa-linkedin" style="color:#0077b5; margin-right:10px; animation:bounce 2s infinite;"></i> 
-      <a href="https://www.linkedin.com/in/shalimreza" target="_blank" style="color:#0077b5; text-decoration:none;">LinkedIn Profile</a>
-    </p>
-  </div>
-
-</div>
-
-<!-- Animation CSS -->
-<style>
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-  }
-</style>
-
-
-
-
-
-
-
- <!-- 
-
-    <div style="text-align:center; margin-top:3rem; padding:2rem; background:white; border-radius:15px;">
-      <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
-      <p>Dhaka, Bangladesh</p>
-      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/shalimreza" target="_blank">LinkedIn Profile</a></p>
-    </div> -->
+    </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Shalim Reza. All rights reserved. | Professional IT Solutions & Business Analysis</p>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Shalim Reza</div>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/shalimreza" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:theshalim01@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+      <a href="tel:+8801734898751" class="social-link"><i class="fas fa-phone"></i></a>
+    </div>
+    <p>&copy; 2025 Shalim Reza. All rights reserved. · ERP Expert & Business Analyst · Dhaka, Bangladesh</p>
   </footer>
 
+  <!-- MODALS -->
+  <div class="modal-overlay" id="m-exp">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('m-exp')"><i class="fas fa-times"></i></button>
+      <h3>4+ Years of Experience</h3>
+      <p>From implementation engineer to product manager, spanning multiple sectors — banking, microfinance, public health, RMG, and academic institutions.</p>
+      <p>Key focus on ERP systems, business process improvement, compliance management, and team leadership throughout the journey.</p>
+    </div>
+  </div>
+  <div class="modal-overlay" id="m-proj">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('m-proj')"><i class="fas fa-times"></i></button>
+      <h3>20+ Projects Completed</h3>
+      <p>Led and implemented over 20 IT projects including ERP deployments, payroll automations, microfinance systems, and digital operations — all delivered on time with high client satisfaction.</p>
+      <p><strong style="color:var(--gold)">Highlights:</strong> Prime Bank ERP, Umoja Microfinance across 4 countries, Bangladesh Development Bank, Investment Corporation of Bangladesh, Uttara Bank, LC Waikiki RMG, and more.</p>
+    </div>
+  </div>
+  <div class="modal-overlay" id="m-train">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('m-train')"><i class="fas fa-times"></i></button>
+      <h3>20+ Trainings Conducted</h3>
+      <p>Conducted over 20 training sessions for end-users focusing on system adoption, ERP usage, and operational efficiency — including hands-on workshops and documentation preparation.</p>
+      <p><strong style="color:var(--gold)">Examples:</strong> ERP user trainings for banks and NGOs, change management sessions, and operational training for system go-live across multiple organizations.</p>
+    </div>
+  </div>
+
   <script>
-    // Navbar scroll effect
+    // Custom cursor
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    function animateCursor() {
+      cursor.style.left = mx - 6 + 'px';
+      cursor.style.top = my - 6 + 'px';
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.left = rx - 18 + 'px';
+      ring.style.top = ry - 18 + 'px';
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+    document.querySelectorAll('a, button, .stat-box, .project-card, .service-card').forEach(el => {
+      el.addEventListener('mouseenter', () => { cursor.style.transform = 'scale(2)'; ring.style.transform = 'scale(1.5)'; ring.style.opacity = '0.3'; });
+      el.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)'; ring.style.transform = 'scale(1)'; ring.style.opacity = '0.6'; });
+    });
+
+    // Nav scroll
+    const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // Hamburger menu toggle
-    document.querySelector('.hamburger').addEventListener('click', () => {
-      document.querySelector('.nav-menu').classList.toggle('active');
+    // Hamburger
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.querySelectorAll('#navLinks a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
     });
 
-    // Fade in animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.fade-in').forEach(el => {
-      observer.observe(el);
-    });
-
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+    // FAQ
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const ans = item.querySelector('.faq-a');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-a').style.maxHeight = '0';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          ans.style.maxHeight = ans.scrollHeight + 'px';
         }
       });
     });
 
-    // FAQ toggle
-    document.querySelectorAll('.faq-question').forEach(item => {
-      item.addEventListener('click', () => {
-        const parent = item.parentElement;
-        parent.classList.toggle('active');
-      });
-    });
-
-    // Stats counter animation
-    function countUp(el) {
-      const target = el.getAttribute('data-count');
-      let count = 0;
-      const increment = parseInt(target) / 100 || 1;
-      const updateCount = () => {
-        count += increment;
-        if (count < parseInt(target) || isNaN(parseInt(target))) {
-          el.textContent = Math.ceil(count);
-          requestAnimationFrame(updateCount);
+    // Stats counter
+    function animateCounter(el) {
+      const target = parseFloat(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const isDecimal = target % 1 !== 0;
+      let current = 0;
+      const step = target / 60;
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          el.textContent = (isDecimal ? target.toFixed(1) : Math.floor(target)) + suffix;
+          clearInterval(timer);
         } else {
-          el.textContent = target;
+          el.textContent = (isDecimal ? current.toFixed(1) : Math.floor(current)) + suffix;
         }
-      };
-      updateCount();
+      }, 25);
     }
 
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          document.querySelectorAll('.stat-number').forEach(el => countUp(el));
-          statsObserver.unobserve(entry.target);
+    const statsObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          document.querySelectorAll('.stat-num[data-target]').forEach(el => animateCounter(el));
+          statsObserver.disconnect();
         }
       });
+    }, { threshold: 0.5 });
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) statsObserver.observe(statsSection);
+
+    // Reveal on scroll
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), e.target.dataset.delay || 0);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.timeline-item, .service-card, .project-card, .skill-card, .testimonial-card').forEach((el, i) => {
+      el.dataset.delay = (i % 4) * 80;
+      revealObs.observe(el);
     });
 
-    statsObserver.observe(document.querySelector('.stats-section'));
-
-    // Popup functions
-    function openModal(modalId) {
-      document.getElementById(modalId).style.display = 'flex';
-    }
-
-    function closeModal(modalId) {
-      document.getElementById(modalId).style.display = 'none';
-    }
-
-    // Close modal on outside click
-    window.onclick = function(event) {
-      document.querySelectorAll('.modal').forEach(modal => {
-        if (event.target === modal) {
-          modal.style.display = 'none';
+    // About section reveal
+    const revealLeftObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
         }
       });
-    };
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.reveal-left, .reveal-right').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = el.classList.contains('reveal-left') ? 'translateX(-30px)' : 'translateX(30px)';
+      el.style.transition = 'all 0.7s ease';
+      revealLeftObs.observe(el);
+    });
 
-    // Form submissions (demo)
-    // TODO: Replace with actual backend endpoint for newsletter and contact form submissions
-    document.querySelectorAll('form').forEach(form => {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you! Your submission has been received. (This is a demo)');
+    // Modals
+    function openModal(id) { document.getElementById(id).classList.add('open'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+    document.querySelectorAll('.modal-overlay').forEach(m => {
+      m.addEventListener('click', e => { if (e.target === m) m.classList.remove('open'); });
+    });
+
+    // Form
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-btn');
+      btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+      btn.style.background = 'var(--accent)';
+      btn.style.color = 'var(--navy)';
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        btn.style.background = '';
+        btn.style.color = '';
+        e.target.reset();
+      }, 3000);
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
       });
     });
   </script>
